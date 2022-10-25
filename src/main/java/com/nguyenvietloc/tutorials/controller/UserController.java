@@ -66,6 +66,7 @@ public class UserController {
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
+        model.addAttribute("users", userService.all());
         return "welcome";
     }
 }
